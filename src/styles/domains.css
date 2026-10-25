@@ -1,0 +1,313 @@
+/*
+ * 45° TWO DOMAINS SECTION STYLES
+ * -------------------------------------------------------------
+ * Light editorial theme styling for Creative & Technology showcases.
+ * Layered surfaces, soft violet & pale blue ambient fields,
+ * restrained image hover transitions, and clean typography.
+ */
+
+.domains-section {
+  padding: var(--section-pad) 0;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+}
+
+.domains-header {
+  max-width: 720px;
+  margin-bottom: 3.5rem;
+}
+
+.domains-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--color-ink);
+  margin-bottom: 1rem;
+}
+
+.domains-subtext {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Two-column layout */
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+/* Domain Card Base */
+.domain-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+}
+
+.domain-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(32, 38, 51, 0.08);
+}
+
+/* Domain Creative Ambient Tint */
+.domain-creative {
+  border-top: 3px solid var(--color-violet-deep);
+  background: linear-gradient(180deg, rgba(220, 213, 240, 0.25) 0%, #FFFFFF 30%);
+}
+
+.domain-creative:hover {
+  border-color: rgba(142, 126, 184, 0.4);
+  border-top-color: var(--color-violet-deep);
+}
+
+/* Domain Tech Ambient Tint */
+.domain-tech {
+  border-top: 3px solid var(--color-cobalt);
+  background: linear-gradient(180deg, rgba(220, 230, 245, 0.35) 0%, #FFFFFF 30%);
+}
+
+.domain-tech:hover {
+  border-color: rgba(66, 105, 178, 0.35);
+  border-top-color: var(--color-cobalt);
+}
+
+/* Image Wrapper with Restrained Hover Zoom */
+.domain-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-ivory-dark);
+}
+
+.domain-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.domain-card:hover .domain-img {
+  transform: scale(1.035);
+}
+
+/* Domain Category Badge */
+.domain-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.domain-badge-creative {
+  background-color: rgba(243, 240, 232, 0.92);
+  color: var(--color-ink);
+  border: 1px solid rgba(142, 126, 184, 0.3);
+}
+
+.domain-badge-creative .domain-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}
+
+.domain-badge-tech {
+  background-color: rgba(243, 240, 232, 0.92);
+  color: var(--color-ink);
+  border: 1px solid rgba(66, 105, 178, 0.3);
+}
+
+.domain-badge-tech .domain-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-cobalt);
+}
+
+/* Domain Content */
+.domain-content {
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.domain-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+}
+
+.domain-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  background-color: var(--color-ivory-dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+.domain-tagline {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.domain-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+}
+
+.domain-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+/* Capabilities List */
+.domain-capabilities {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 1.75rem;
+}
+
+.capabilities-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.75rem;
+}
+
+.capabilities-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.capability-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.cap-mark {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.domain-tech .cap-mark {
+  color: var(--color-cobalt);
+}
+
+/* Domain CTA Link */
+.domain-action {
+  margin-top: 0.5rem;
+}
+
+.domain-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.domain-link-creative {
+  color: var(--color-ink);
+}
+
+.domain-link-creative:hover,
+.domain-link-creative:focus-visible {
+  color: var(--color-gold-deep);
+}
+
+.domain-link-tech {
+  color: var(--color-ink);
+}
+
+.domain-link-tech:hover,
+.domain-link-tech:focus-visible {
+  color: var(--color-cobalt);
+}
+
+.domain-link .arrow-45 {
+  transition: transform var(--transition-smooth);
+}
+
+.domain-link:hover .arrow-45 {
+  transform: translate(3px, -3px);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .domains-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .domain-content {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .domain-card:hover {
+    transform: none;
+  }
+  .domain-card:hover .domain-img {
+    transform: none;
+  }
+  .domain-link:hover .arrow-45 {
+    transform: none;
+  }
+}

@@ -1,0 +1,324 @@
+/*
+ * 45° SELECTED WORK SECTION STYLES
+ * -------------------------------------------------------------
+ * Clean light editorial card grid for showcase projects.
+ * Restrained image zoom, placeholder demarcation, and
+ * architecture-inspired typography.
+ */
+
+.work-section {
+  padding: var(--section-pad) 0;
+  position: relative;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.work-header {
+  margin-bottom: 3.5rem;
+}
+
+.work-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.work-placeholder-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-ink);
+  background-color: rgba(213, 168, 92, 0.15);
+  border: 1px solid rgba(213, 168, 92, 0.35);
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+}
+
+.notice-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold);
+}
+
+.work-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+}
+
+.work-subtext {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 640px;
+}
+
+/* 3-Column Project Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(32, 38, 51, 0.22);
+  box-shadow: 0 16px 36px rgba(32, 38, 51, 0.08);
+}
+
+.project-card-creative:hover {
+  border-top: 3px solid var(--color-violet-deep);
+}
+
+.project-card-technology:hover {
+  border-top: 3px solid var(--color-cobalt);
+}
+
+/* Image Container */
+.project-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  background-color: var(--color-ivory-dark);
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.04);
+}
+
+/* Floating Stamp & Watermark */
+.project-stamp {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(243, 240, 232, 0.95);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.stamp-domain {
+  color: var(--text-secondary);
+}
+
+.project-watermark {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background-color: rgba(32, 38, 51, 0.75);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Project Body */
+.project-body {
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+}
+
+.project-category {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.project-client {
+  color: var(--text-tertiary);
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--color-ink);
+  margin-bottom: 0.75rem;
+}
+
+.project-summary {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+}
+
+.project-tag {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  background-color: var(--color-ivory-dark);
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Trajectory Action Link */
+.project-action {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-action-link {
+  color: var(--color-cobalt);
+}
+
+.project-action-link .arrow-45 {
+  transition: transform var(--transition-smooth);
+}
+
+.project-card:hover .arrow-45 {
+  transform: translate(2px, -2px);
+}
+
+/* Documentation Banner */
+.work-documentation-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--border-accent);
+  padding: 1.25rem 1.75rem;
+  border-radius: 3px;
+}
+
+.doc-icon {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.doc-text {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.doc-code {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background-color: var(--color-ivory-dark);
+  color: var(--color-ink);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .work-documentation-box {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover {
+    transform: none;
+  }
+  .project-card:hover .project-img {
+    transform: none;
+  }
+  .project-card:hover .arrow-45 {
+    transform: none;
+  }
+}

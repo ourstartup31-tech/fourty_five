@@ -1,0 +1,173 @@
+/*
+ * 45° BASE CSS & ACCESSIBLE FOUNDATION (LIGHT EDITORIAL THEME)
+ * -------------------------------------------------------------
+ * Warm Ivory foundation (#F3F0E8), Deep Ink typography (#202633),
+ * responsive resets, accessible skip link, and focus rings.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 1.5rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  position: relative;
+}
+
+/* Subtle Architectural Grid Texture over Warm Ivory */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(32, 38, 51, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(32, 38, 51, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Accessible Skip Link for Keyboard Navigation */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background: var(--color-ink);
+  color: var(--bg-primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  z-index: 9999;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* High-Contrast Accessible Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Global Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--color-ink-muted);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Section Wrapper Standard */
+.section {
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(4rem, 7vw, 7rem);
+  position: relative;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Subtle Functional Section Tag */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+  margin-bottom: 1.25rem;
+}
+
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1.5px;
+  background-color: var(--color-cobalt);
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* Subtle 45° Trajectory Arrow for CTAs */
+.arrow-45 {
+  display: inline-block;
+  transition: transform var(--transition-smooth);
+}
+
+a:hover .arrow-45,
+button:hover .arrow-45 {
+  transform: translate(2px, -2px);
+}
+
+/* Accessible Reduced Motion Setting */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

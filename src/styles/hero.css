@@ -1,0 +1,495 @@
+/*
+ * 45° HERO SECTION STYLES (FULL-BACKGROUND TRAJECTORY)
+ * -------------------------------------------------------------
+ * The trajectory animates across the ENTIRE Hero section background:
+ * Dim, elegant, architectural, and visible beneath the high-contrast
+ * foreground narrative.
+ *
+ * Warm Ivory (#F3F0E8), Deep Ink (#202633), Soft Violet & Pale Blue.
+ */
+
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 2.5rem;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Full-bleed Background Trajectory Layer */
+.hero-backdrop-trajectory {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fullhero-trajectory-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.fullhero-trajectory-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ambient Color Drift Fields (Soft Violet & Pale Blue) */
+.hero-ambient-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-ambient-tech {
+  position: absolute;
+  top: -15%;
+  right: -5%;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 230, 245, 0.6) 0%, rgba(243, 240, 232, 0.2) 65%, transparent 80%);
+  filter: blur(60px);
+  animation: ambientLightTech 22s ease-in-out infinite alternate;
+}
+
+.hero-ambient-creative {
+  position: absolute;
+  bottom: -15%;
+  left: -5%;
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 213, 240, 0.55) 0%, rgba(243, 240, 232, 0.2) 65%, transparent 80%);
+  filter: blur(60px);
+  animation: ambientLightCreative 26s ease-in-out infinite alternate;
+}
+
+@keyframes ambientLightTech {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-40px, 30px, 0) scale(1.08); }
+}
+
+@keyframes ambientLightCreative {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(40px, -30px, 0) scale(1.06); }
+}
+
+/* Foreground Container */
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  width: 100%;
+}
+
+/* Main Hero Narrative Block */
+.hero-content {
+  max-width: 660px;
+  padding: 3rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Flat Architectural Tag */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--color-ink);
+  border: 1px solid var(--border-subtle);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+  margin-bottom: 1.75rem;
+  border-left: 2px solid var(--color-cobalt);
+  box-shadow: 0 2px 8px rgba(32, 38, 51, 0.04);
+}
+
+.hero-tag-prefix {
+  color: var(--color-cobalt);
+  font-weight: 800;
+}
+
+/* Concise Central Headline — Syne Display */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.4vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+
+/* Supporting Statement */
+.hero-description {
+  font-family: var(--font-body);
+  font-size: var(--body-lead); /* 1.05rem */
+  line-height: 1.68;
+  color: var(--color-ink-muted);
+  max-width: 540px;
+  margin-bottom: 2.25rem;
+}
+
+/* Action CTA Group */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-ink);
+  color: var(--bg-primary);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.9rem 1.75rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-primary-action:hover,
+.btn-primary-action:focus-visible {
+  background-color: var(--color-cobalt);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(66, 105, 178, 0.25);
+}
+
+.btn-primary-action .arrow-45 {
+  transition: transform var(--transition-smooth);
+}
+
+.btn-primary-action:hover .arrow-45 {
+  transform: translate(3px, -3px);
+}
+
+.cue-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-muted);
+  transition: color var(--transition-fast), border-bottom-color var(--transition-fast);
+  padding: 0.5rem 0;
+  border-bottom: 1.5px solid transparent;
+  text-decoration: none;
+}
+
+.cue-secondary:hover,
+.cue-secondary:focus-visible {
+  color: var(--color-cobalt);
+  border-bottom-color: var(--color-cobalt);
+}
+
+.cue-icon {
+  display: inline-block;
+  color: var(--color-cobalt);
+  transition: transform var(--transition-smooth);
+}
+
+.cue-secondary:hover .cue-icon {
+  transform: translateY(3px);
+}
+
+/* -------------------------------------------------------------
+   BACKGROUND TRAJECTORY MOTION & STAGE HIGHLIGHTS
+   ------------------------------------------------------------- */
+/* Path Drawing Animation */
+.backdrop-draw-line {
+  transition: stroke-dashoffset 1.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Traveling Tracer Beacon */
+.backdrop-traveling-tracer {
+  will-change: transform;
+  transition: transform 1.3s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.tracer-halo-ring {
+  animation: tracerHaloPulse 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes tracerHaloPulse {
+  0% { transform: scale(0.9); stroke-opacity: 0.45; }
+  100% { transform: scale(1.35); stroke-opacity: 0.12; }
+}
+
+/* Stage Markers & Phrase Revealing */
+.backdrop-stage-group {
+  opacity: 0.45;
+  transition: opacity 0.6s ease;
+}
+
+.backdrop-stage-group.activated {
+  opacity: 1;
+}
+
+.backdrop-phrase-reveal {
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s;
+}
+
+.backdrop-stage-group.activated .backdrop-phrase-reveal {
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+/* Destination Ring & Brand Mark Settling */
+.backdrop-destination-pulse {
+  transform-origin: 1320px 120px;
+  animation: destinationBeacon 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes destinationBeacon {
+  0% { transform: scale(0.95); stroke-opacity: 0.7; }
+  100% { transform: scale(1.3); stroke-opacity: 0.2; }
+}
+
+.backdrop-deliver-mark {
+  opacity: 0;
+  transform: scale(0.7);
+  transform-origin: 1320px 80px;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.active-stage-4 .backdrop-deliver-mark,
+.is-settled .backdrop-deliver-mark {
+  opacity: 0.95;
+  transform: scale(1);
+}
+
+/* -------------------------------------------------------------
+   FLOATING PLAYBACK & STAGE STATUS CONTROLLER
+   ------------------------------------------------------------- */
+.hero-floating-controller {
+  position: absolute;
+  bottom: 2rem;
+  right: 2.5rem;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: rgba(243, 240, 232, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1.15rem;
+  border-radius: 3px;
+  box-shadow: 0 8px 24px rgba(32, 38, 51, 0.06);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-floating-controller:hover {
+  border-color: rgba(32, 38, 51, 0.2);
+  box-shadow: 0 12px 30px rgba(32, 38, 51, 0.09);
+}
+
+.controller-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+}
+
+.controller-badge {
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+  font-size: 0.625rem;
+}
+
+.controller-name {
+  font-weight: 800;
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+}
+
+.controller-divider {
+  color: rgba(32, 38, 51, 0.3);
+}
+
+.controller-phrase {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.btn-controller-action {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  background-color: rgba(32, 38, 51, 0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-controller-action:hover {
+  background-color: var(--color-cobalt);
+  color: #FFFFFF;
+  border-color: var(--color-cobalt);
+}
+
+/* Hero Footer Context Strip */
+.hero-footer-bar {
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hero-meta-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-faint);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.hero-meta-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.meta-indicator-gold { color: var(--color-gold-deep); font-weight: 700; }
+.meta-indicator-cobalt { color: var(--color-cobalt); font-weight: 700; }
+.meta-indicator-violet { color: var(--color-violet-deep); font-weight: 700; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-floating-controller {
+    position: static;
+    margin-top: 2rem;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: calc(var(--nav-height) + 1.25rem);
+    padding-bottom: 2rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem 0 1rem 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn-primary-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .hero-floating-controller {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-ambient-tech,
+  .hero-ambient-creative,
+  .tracer-halo-ring,
+  .backdrop-destination-pulse {
+    animation: none !important;
+  }
+
+  .backdrop-draw-line {
+    stroke-dashoffset: 0 !important;
+    transition: none !important;
+  }
+
+  .backdrop-stage-group,
+  .backdrop-phrase-reveal,
+  .backdrop-deliver-mark {
+    opacity: 0.85 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .backdrop-traveling-tracer {
+    transition: none !important;
+    transform: translate(1320px, 120px) !important;
+  }
+}

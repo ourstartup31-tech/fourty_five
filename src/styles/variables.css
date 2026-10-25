@@ -1,0 +1,71 @@
+/* 
+ * 45° LIGHT EDITORIAL DESIGN SYSTEM TOKENS
+ * -------------------------------------------------------------
+ * Visual-first light theme:
+ * - Warm Ivory base: #F3F0E8
+ * - Pale Blue: #DCE6F5 & Cobalt: #4269B2 (Technology Domain)
+ * - Soft Violet: #DCD5F0 & Warm Gold: #D5A85C (Creative Domain)
+ * - Deep Ink: #202633 (High-contrast typography)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Core Light Palette */
+  --bg-primary: #F3F0E8;           /* Warm ivory primary ground */
+  --bg-secondary: #EBE5D8;         /* Subtle warm ivory surface */
+  --bg-surface: #FFFFFF;           /* Crisp paper white for elevated cards */
+  --bg-glass: rgba(243, 240, 232, 0.90); /* Frosted warm ivory navigation */
+
+  /* Deep Ink & Typography (WCAG AAA compliant on #F3F0E8) */
+  --color-ink: #202633;            /* Deep ink for headlines and primary text */
+  --color-ink-muted: #545C6E;      /* Muted ink for secondary text and descriptions */
+  --color-ink-faint: #838C9E;      /* Faint technical labels and coordinates */
+
+  /* Creative Domain Palette (Soft Violet & Warm Gold) */
+  --color-violet-soft: #DCD5F0;    /* Soft violet field */
+  --color-violet-deep: #685294;    /* Deep violet for text and badges */
+  --color-gold: #D5A85C;           /* Warm gold accent */
+  --color-gold-deep: #997129;      /* Deep gold for high-contrast text */
+  --bg-creative-field: #EBE5F5;    /* Tinted light violet background */
+
+  /* Technology Domain Palette (Pale Blue & Cobalt) */
+  --color-blue-pale: #DCE6F5;      /* Pale blue field */
+  --color-cobalt: #4269B2;         /* Vibrant cobalt blue */
+  --color-cobalt-deep: #25427D;    /* Deep cobalt for high-contrast text */
+  --bg-tech-field: #E7EEF8;        /* Tinted light blue background */
+
+  /* Borders & Hairlines */
+  --border-subtle: rgba(32, 38, 51, 0.12);
+  --border-medium: rgba(32, 38, 51, 0.22);
+  --border-hover: rgba(32, 38, 51, 0.35);
+  --border-gold: rgba(213, 168, 92, 0.45);
+  --border-cobalt: rgba(66, 105, 178, 0.40);
+  --border-violet: rgba(104, 82, 148, 0.35);
+
+  /* Typography Families */
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography Scale (Strictly Avoiding Oversized Poster Fonts) */
+  --title-hero: clamp(2rem, 3.8vw, 3.15rem);
+  --title-section: clamp(1.5rem, 2.6vw, 2.25rem);
+  --title-card: 1.25rem;
+  --body-lead: 1.05rem;
+  --body-regular: 0.9375rem;
+  --caption-technical: 0.75rem;
+
+  /* Layout & Spacing */
+  --container-max: 1240px;
+  --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+  --nav-height: 72px;
+
+  /* Transitions */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s ease;
+  --transition-smooth: 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Trajectory Constants */
+  --angle-deg: 45deg;
+}
